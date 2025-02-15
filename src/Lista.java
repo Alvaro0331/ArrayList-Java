@@ -21,11 +21,12 @@ public class Lista {
         Nodo aux=null;
         
         /*Recorrer la lista*/
-        for(Nodo n:this.list){
+        for(Nodo n:list){
             if(nodo.getID()==n.getID()){
                 aux=new Nodo();
                 aux.setID((n.getID()));
                 aux.setNombre(n.getNombre());
+                break;
             }
         }
         return aux;
