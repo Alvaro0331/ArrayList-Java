@@ -26,14 +26,21 @@ public class Lista {
                 aux=new Nodo();
                 aux.setID((n.getID()));
                 aux.setNombre(n.getNombre());
+                aux.setPeso(n.getPeso());
                 break;
             }
         }
         return aux;
     }
     
-    public void editar(){
-        
+    public void editar(int id,String nNombre,double peso){
+        for(Nodo n : list){
+            if(n.getID()==id){
+                n.setNombre(nNombre);
+                n.setPeso(peso);
+                return;
+            }
+        }
     }
     public void remover(){
         

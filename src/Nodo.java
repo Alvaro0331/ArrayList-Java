@@ -1,6 +1,7 @@
 public class Nodo {
     private int ID;
     private String nombre;
+    private double peso;
 
     public int getID() {
         return ID;
@@ -16,6 +17,14 @@ public class Nodo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
     
     
