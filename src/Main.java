@@ -85,6 +85,11 @@ public class Main extends javax.swing.JFrame {
 
         btRemover.setText("Remover");
         btRemover.setEnabled(false);
+        btRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRemoverActionPerformed(evt);
+            }
+        });
 
         btBuscar.setText("Buscar");
         btBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +187,9 @@ public class Main extends javax.swing.JFrame {
             nodo.setPeso(Double.parseDouble(txPeso.getText()));
             lista.agregarLista(nodo);
             this.list=lista.getActualizar();
+            txId.setText("");
+            txNombre.setText("");
+            txPeso.setText("");
         }
         else{
             JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
@@ -230,6 +238,25 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
         }
     }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverActionPerformed
+        int id=Integer.parseInt(txId.getText());
+        if(!this.txId.getText().equals("")){
+            //Limpiar cajas
+            txId.setText("");
+            txNombre.setText("");
+            txPeso.setText("");
+            this.list=lista.getActualizar();
+            lista.remover(id);
+            JOptionPane.showMessageDialog(null, "Nodo eliminado");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Error, no has buscado el nodo a eliminar");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btRemoverActionPerformed
 
     public static void main(String args[]) {
         
